@@ -1,16 +1,19 @@
-# weatherapp_v2
+# WeatherApp_v2
 
-A new Flutter project.
+WeatherApp_v2 is a Flutter-based application designed to provide weather updates for cities around the world. This project leverages the MVVM (Model-View-ViewModel) architecture and uses the Provider package for state management. It fetches weather data using the OpenWeatherMap API.
+
+## Features
+
+- **Real-time Weather Data**: Get current weather information for various cities.
+- **Voice Search**: Use speech recognition to search for weather in different cities.
+- **City Filtering**: Search and filter cities with real-time updates.
+- **User-friendly Interface**: Clean and intuitive design to enhance user experience.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+To start using this project, ensure you have Flutter installed on your system. Follow these steps:
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/yourusername/weatherapp_v2.git
+   cd weatherapp_v2
