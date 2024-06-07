@@ -97,9 +97,8 @@ class _HomePageState extends State<HomePage> {
                           borderRadius: BorderRadius.circular(14),
                           color: ColorsCollection.whiteNeutral.withOpacity(0.5),
                         ),
-                        child: IconButton(
-                          onPressed: () {},
-                          icon: const Icon(Icons.wb_sunny_outlined),
+                        child: const Icon(
+                          Icons.wb_sunny_outlined,
                         ),
                       ),
                       Text('Rainfall', style: AppTextStyles.dateTitle),
@@ -130,9 +129,8 @@ class _HomePageState extends State<HomePage> {
                           borderRadius: BorderRadius.circular(14),
                           color: ColorsCollection.whiteNeutral.withOpacity(0.5),
                         ),
-                        child: IconButton(
-                          onPressed: () {},
-                          icon: const Icon(Icons.wind_power_sharp),
+                        child: const Icon(
+                          Icons.wind_power_sharp,
                         ),
                       ),
                       Text('Wind', style: AppTextStyles.dateTitle),
@@ -163,9 +161,8 @@ class _HomePageState extends State<HomePage> {
                           borderRadius: BorderRadius.circular(14),
                           color: ColorsCollection.whiteNeutral.withOpacity(0.5),
                         ),
-                        child: IconButton(
-                          onPressed: () {},
-                          icon: const Icon(Icons.water_sharp),
+                        child: const Icon(
+                          Icons.water_sharp,
                         ),
                       ),
                       Text('Humidity', style: AppTextStyles.dateTitle),

@@ -5,7 +5,7 @@ import 'package:weatherapp_v2/constants/colors/colors.dart';
 import 'package:weatherapp_v2/constants/padding/padding.dart';
 import 'package:weatherapp_v2/constants/textstyle/textstyle.dart';
 import 'package:weatherapp_v2/model/models_city.dart';
-import 'package:weatherapp_v2/views/city/viewmodel/viewmodel_citypage.dart';
+import 'package:weatherapp_v2/viewmodels/viewmodel_citypage.dart';
 import 'package:weatherapp_v2/views/home/dashboard.dart';
 
 class CityPage extends StatelessWidget {
@@ -117,7 +117,7 @@ class CityPage extends StatelessWidget {
                                     child: Container(
                                       decoration: BoxDecoration(
                                         color: viewModel.selectedIndex == index
-                                            ? ColorsCollection.blueLight
+                                            ? ColorsCollection.primaryColor
                                                 .withOpacity(0.1)
                                             : ColorsCollection.greyNeutral
                                                 .withOpacity(0.1),
@@ -193,11 +193,10 @@ class CityPage extends StatelessWidget {
                   ),
                   onPressed: () {
                     if (viewModel.selectedIndex != -1) {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const MainPage()),
-                      );
+                      Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const MainPage()));
                     }
                   },
                 ),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:weatherapp_v2/views/city/viewmodel/viewmodel_citypage.dart';
+import 'package:weatherapp_v2/viewmodels/viewmodel_citypage.dart';
 import 'package:weatherapp_v2/views/getstarted.dart';
 
 void main() {
