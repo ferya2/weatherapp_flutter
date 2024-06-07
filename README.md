@@ -15,7 +15,7 @@ To start using this project, ensure you have Flutter installed on your system. F
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/yourusername/weatherapp_v2.git
+   git clone https://github.com/ferya2/weatherapp_v2.git
    cd weatherapp_v2
 2. **Instal Depedencies**:
    ```bash
@@ -46,7 +46,7 @@ This project follows the MVVM architecture:
 
 ## API Integration
 
-This app uses the OpenWeatherMap API to fetch real-time weather data. You need to get an API key from OpenWeatherMap and configure it in your project.
+This app uses the [OpenWeatherMap](https://openweathermap.org/api) API to fetch real-time weather data. You need to get an API key from OpenWeatherMap and configure it in your project.
 
 ## Resources
 
@@ -58,9 +58,6 @@ This app uses the OpenWeatherMap API to fetch real-time weather data. You need t
 
 Contributions are welcome! Feel free to open issues or submit pull requests.
 
-## License
-
-This project is licensed under the MIT License.
 
 ---
 
