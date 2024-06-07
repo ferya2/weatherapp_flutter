@@ -22,7 +22,7 @@ To start using this project, ensure you have Flutter installed on your system. F
    flutter pub get
 3. **Run The App**:
    ```bash
-   flutter pub get
+   flutter run
 
 # Project Structure
 
