@@ -3,6 +3,8 @@ import 'package:weatherapp_v2/constants/colors/colors.dart';
 import 'package:weatherapp_v2/constants/textstyle/textstyle.dart';
 import 'package:weatherapp_v2/views/city/city_page.dart';
 
+import 'home/dashboard.dart';
+
 class GetStarted extends StatelessWidget {
   const GetStarted({super.key});
 
@@ -65,7 +67,7 @@ class GetStarted extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const CityPage(),
+                            builder: (context) => const MainPage(),
                           ));
                     },
                     child: Text(

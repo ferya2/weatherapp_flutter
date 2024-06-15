@@ -11,7 +11,42 @@ class AppTextStyles {
       fontSize: 14,
       fontWeight: FontWeight.w600,
       color: ColorsCollection.whiteNeutral.withOpacity(0.88));
-
+  static TextStyle articleTitleStyle = GoogleFonts.openSans(
+      fontSize: 14,
+      fontWeight: FontWeight.w700,
+      color: ColorsCollection.blackNeutral);
+  static TextStyle articlePortalStyle = GoogleFonts.openSans(
+      fontSize: 13,
+      fontWeight: FontWeight.w600,
+      color: ColorsCollection.blackNeutral);
+  static TextStyle articleSubtitleStyle = GoogleFonts.openSans(
+      fontSize: 13,
+      fontWeight: FontWeight.w400,
+      color: ColorsCollection.blackNeutral);
+  static TextStyle articleDateStyle = GoogleFonts.openSans(
+      fontSize: 10.2,
+      fontWeight: FontWeight.w400,
+      color: ColorsCollection.blackNeutral);
+  static TextStyle artDetTitleStyle = GoogleFonts.openSans(
+      fontSize: 18,
+      fontWeight: FontWeight.w700,
+      color: ColorsCollection.blackNeutral);
+  static TextStyle artDetPortalStyle = GoogleFonts.openSans(
+      fontSize: 15,
+      fontWeight: FontWeight.w600,
+      color: ColorsCollection.blackNeutral);
+  static TextStyle artDetSubtitleStyle = GoogleFonts.openSans(
+      fontSize: 15,
+      fontWeight: FontWeight.w400,
+      color: ColorsCollection.blackNeutral);
+  static TextStyle artDetDateStyle = GoogleFonts.openSans(
+      fontSize: 13.2,
+      fontWeight: FontWeight.w400,
+      color: ColorsCollection.blackNeutral);
+  static TextStyle artDetSourceStyle = GoogleFonts.openSans(
+      fontSize: 14,
+      fontWeight: FontWeight.w400,
+      color: ColorsCollection.blackNeutral);
   static TextStyle subTitleStyle = GoogleFonts.openSans(
       fontSize: 14,
       fontWeight: FontWeight.normal,
@@ -49,4 +84,6 @@ class AppTextStyles {
     fontWeight: FontWeight.normal,
     color: Colors.black, // default color, can be overridden
   );
+
 }
+

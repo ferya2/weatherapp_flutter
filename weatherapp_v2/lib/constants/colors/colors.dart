@@ -16,7 +16,7 @@ class ColorsCollection {
   static const brown = Color(0xFF865439);
   static const greenDark = Color(0xFF006769);
   static const greenDarkBlue = Color.fromARGB(255, 2, 93, 94);
-  static const blueLight = Color(0xFF2F80ED);
+  static const blueLight = Color.fromARGB(255, 90, 116, 150);
   static const blueDark = Color.fromARGB(152, 3, 42, 92);
   static const yellowDark = Color.fromARGB(255, 182, 149, 2);
 }
