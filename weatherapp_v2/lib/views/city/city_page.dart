@@ -18,7 +18,7 @@ class CityPage extends StatelessWidget {
       child: Scaffold(
         resizeToAvoidBottomInset: false,
         appBar: AppBar(
-          backgroundColor: ColorsCollection.blackNeutral06.withOpacity(0.5),
+          backgroundColor: ColorsCollection.greenDarkBlue.withOpacity(0.084),
           automaticallyImplyLeading: false,
           centerTitle: true,
           title: Text(
@@ -30,11 +30,12 @@ class CityPage extends StatelessWidget {
               padding: CustomPadding.kSidePaddingRight,
               child: IconButton(
                 onPressed: () {},
-                icon: const Icon(Icons.my_location_sharp),
+                icon: const Icon(Icons.my_location_sharp, color: Colors.white),
               ),
             ),
           ],
         ),
+        backgroundColor: ColorsCollection.blueDark.withOpacity(0.98),
         body: Padding(
           padding: CustomPadding.kSidePadding,
           child: Column(
@@ -49,7 +50,7 @@ class CityPage extends StatelessWidget {
               Consumer<CityPageViewModel>(
                 builder: (context, viewModel, child) {
                   return SizedBox(
-                    height: 48,
+                    height: MediaQuery.of(context).size.height * 0.078,
                     width: double.infinity,
                     child: CupertinoTextField(
                       controller: viewModel.textEditingController,
@@ -65,7 +66,7 @@ class CityPage extends StatelessWidget {
                         child: IconButton(
                           icon: const Icon(
                             CupertinoIcons.mic_circle,
-                            color: ColorsCollection.blackNeutral06,
+                            color: ColorsCollection.greyNeutral,
                           ),
                           onPressed: () {
                             viewModel.startListening();
@@ -117,10 +118,9 @@ class CityPage extends StatelessWidget {
                                     child: Container(
                                       decoration: BoxDecoration(
                                         color: viewModel.selectedIndex == index
-                                            ? ColorsCollection.primaryColor
-                                                .withOpacity(0.1)
-                                            : ColorsCollection.greyNeutral
-                                                .withOpacity(0.1),
+                                            ? ColorsCollection.greenDarkBlue
+                                                .withOpacity(0.44)
+                                            : ColorsCollection.whiteNeutral,
                                         borderRadius: BorderRadius.circular(10),
                                       ),
                                       child: Padding(
@@ -133,13 +133,13 @@ class CityPage extends StatelessWidget {
                                                 style: AppTextStyles
                                                     .weatherTitle
                                                     .copyWith(
-                                                  color: viewModel
-                                                              .selectedIndex ==
-                                                          index
-                                                      ? ColorsCollection
-                                                          .blueLight
-                                                      : ColorsCollection
-                                                          .blackNeutral06,
+                                                  color:
+                                                      viewModel.selectedIndex ==
+                                                              index
+                                                          ? ColorsCollection
+                                                              .greyNeutral02
+                                                          : ColorsCollection
+                                                              .blackNeutral06,
                                                 ),
                                               ),
                                             ),
@@ -148,8 +148,8 @@ class CityPage extends StatelessWidget {
                                               const Icon(
                                                 CupertinoIcons
                                                     .check_mark_circled_solid,
-                                                color:
-                                                    ColorsCollection.blueLight,
+                                                color: ColorsCollection
+                                                    .greyNeutral,
                                               ),
                                           ],
                                         ),
@@ -179,17 +179,16 @@ class CityPage extends StatelessWidget {
                 decoration: BoxDecoration(
                   borderRadius: const BorderRadius.all(Radius.circular(20)),
                   color: viewModel.selectedIndex != -1
-                      ? ColorsCollection.blueLight.withOpacity(0.5)
+                      ? ColorsCollection.greenDarkBlue.withOpacity(0.5)
                       : ColorsCollection.greyNeutral.withOpacity(0.5),
                 ),
                 child: CupertinoButton(
                   child: Text(
-                    'Choose',
+                    'choose',
                     style: AppTextStyles.weatherTitle.copyWith(
-                      color: viewModel.selectedIndex != -1
-                          ? ColorsCollection.blackNeutral06
-                          : ColorsCollection.greyNeutral,
-                    ),
+                        color: viewModel.selectedIndex != -1
+                            ? ColorsCollection.whiteNeutral
+                            : ColorsCollection.blackNeutral06),
                   ),
                   onPressed: () {
                     if (viewModel.selectedIndex != -1) {
