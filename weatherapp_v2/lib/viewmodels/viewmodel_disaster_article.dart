@@ -14,7 +14,7 @@ class DisasterArticleViewmodel with ChangeNotifier {
     notifyListeners();
 
     try {
-      final response = await http.get(Uri.parse("https://api.worldnewsapi.com/search-news?api-key=3082069646fe4f518231429eb29815b0&text=disasters"));
+      final response = await http.get(Uri.parse("https://api.worldnewsapi.com/search-news?api-key=API_KEY&text=disasters"));
 
       if (response.statusCode == 200) {
         _disasterArticleList = disasterArticleFromJson(response.body).news;
