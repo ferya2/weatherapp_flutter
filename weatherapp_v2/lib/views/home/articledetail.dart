@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:intl/intl.dart';
 import 'package:weatherapp_v2/constants/padding/padding.dart';
 import 'package:flutter_linkify/flutter_linkify.dart';
 
@@ -6,7 +8,24 @@ import '../../constants/colors/colors.dart';
 import '../../constants/textstyle/textstyle.dart';
 
 class ArticleDetail extends StatelessWidget {
-  const ArticleDetail({super.key});
+  final String title;
+  final String text;
+  final String summary;
+  final String url;
+  final String image;
+  final DateTime publishDate;
+  final String author;
+  final String sourceCountry;
+  const ArticleDetail(
+      {super.key,
+      required this.title,
+      required this.text,
+      required this.summary,
+      required this.url,
+      required this.image,
+      required this.publishDate,
+      required this.author,
+      required this.sourceCountry});
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +38,7 @@ class ArticleDetail extends StatelessWidget {
             child: Hero(
               tag: 'article',
               child: Image.network(
-                "https://ugm.ac.id/wp-content/uploads/2023/02/07022316757602511534466263.jpeg",
+                image,
                 fit: BoxFit.cover,
               ),
             ),
@@ -29,6 +48,7 @@ class ArticleDetail extends StatelessWidget {
               backgroundColor: Colors.transparent,
               elevation: 0,
               automaticallyImplyLeading: false,
+              scrolledUnderElevation: 0,
               leading: Padding(
                 padding: const EdgeInsets.all(10.0),
                 child: CircleAvatar(
@@ -37,6 +57,7 @@ class ArticleDetail extends StatelessWidget {
                     onPressed: () {
                       Navigator.pop(context);
                     },
+                    tooltip: "Back",
                     icon: const Icon(
                       Icons.arrow_back_ios_rounded,
                       color: ColorsCollection.blackNeutral,
@@ -45,6 +66,37 @@ class ArticleDetail extends StatelessWidget {
                   ),
                 ),
               ),
+              actions: [
+                Padding(
+                  padding: const EdgeInsets.only(
+                      right: 10.0, bottom: 10.0, top: 10.0),
+                  child: CircleAvatar(
+                    backgroundColor: Colors.white,
+                    child: IconButton(
+                      onPressed: () {},
+                      tooltip: "Summary",
+                      icon: const Icon(FontAwesomeIcons.list,
+                          color: ColorsCollection.blackNeutral, size: 15),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(
+                      right: 10.0, bottom: 10.0, top: 10.0),
+                  child: CircleAvatar(
+                    backgroundColor: Colors.white,
+                    child: IconButton(
+                      onPressed: () {},
+                      tooltip: "Share",
+                      icon: const Icon(
+                        FontAwesomeIcons.share,
+                        color: ColorsCollection.blackNeutral,
+                        size: 15,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
             ),
           ),
           Column(
@@ -71,7 +123,7 @@ class ArticleDetail extends StatelessWidget {
                     child: Column(
                       children: [
                         Text(
-                          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
+                          title,
                           style: AppTextStyles.artDetTitleStyle,
                         ),
                         const SizedBox(height: 10),
@@ -79,38 +131,57 @@ class ArticleDetail extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             const Icon(
-                              Icons.date_range,
-                              size: 15,
+                              Icons.pin_drop,
+                              size: 12,
                             ),
                             const SizedBox(
                               width: 2,
                             ),
                             Text(
-                              "Jumat, 01 Mar 2024 13:45 WIB",
+                              sourceCountry.toUpperCase(),
+                              style: AppTextStyles.articleDateStyle,
+                            ),
+                          ],
+                        ),
+                        const SizedBox(height: 3),
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            const Icon(
+                              FontAwesomeIcons.pencil,
+                              size: 10,
+                            ),
+                            const SizedBox(
+                              width: 4,
+                            ),
+                            Text(
+                              author,
+                              style: AppTextStyles.articleDateStyle,
+                            ),
+                            const SizedBox(
+                              width: 5,
+                            ),
+                            const Icon(
+                              FontAwesomeIcons.calendar,
+                              size: 10,
+                            ),
+                            const SizedBox(
+                              width: 4,
+                            ),
+                            Text(
+                              DateFormat.yMMMd().add_Hms().format(publishDate),
                               style: AppTextStyles.articleDateStyle,
                             ),
                           ],
                         ),
                         const SizedBox(height: 15),
-                        RichText(
-                          text: TextSpan(
-                            children: [
-                              TextSpan(
-                                text: "Lorem - ",
-                                style: AppTextStyles.artDetPortalStyle,
-                              ),
-                              TextSpan(
-                                text:
-                                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-                                style: AppTextStyles.artDetSubtitleStyle,
-                              ),
-                            ],
-                          ),
+                        Text(
+                          text,
+                          style: AppTextStyles.artDetSubtitleStyle,
                         ),
                         const SizedBox(height: 15),
-                        const SelectableLinkify(
-                          text:
-                              "Source : https://ugm.ac.id/wp-content/uploads/2023/02/07022316757602511534466263.jpeg",
+                        SelectableLinkify(
+                          text: "Source : $url",
                         ),
                       ],
                     ),

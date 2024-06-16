@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:weatherapp_v2/viewmodels/viewmodel_citypage.dart';
+import 'package:weatherapp_v2/viewmodels/viewmodel_disaster_article.dart';
 import 'package:weatherapp_v2/views/getstarted.dart';
 
 void main() {
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => CityPageViewModel()),
-        // Tambahkan provider lain di sini jika diperlukan
+        ChangeNotifierProvider(create: (_) => DisasterArticleViewmodel()..getDisasterArticle()),
       ],
       child: const MaterialApp(
         debugShowCheckedModeBanner: false,
