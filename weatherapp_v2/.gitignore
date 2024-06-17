@@ -30,6 +30,7 @@ migrate_working_dir/
 .pub-cache/
 .pub/
 env.g.dart
+.env
 /build/
 
 # Symbolication related
