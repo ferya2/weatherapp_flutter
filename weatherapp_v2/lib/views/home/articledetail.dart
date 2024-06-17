@@ -40,6 +40,18 @@ class ArticleDetail extends StatelessWidget {
               child: Image.network(
                 image,
                 fit: BoxFit.cover,
+                errorBuilder: (context, error, stackTrace) {
+                  return const Center(
+                    child: Text(
+                      'Not Found',
+                      style: TextStyle(
+                        color: ColorsCollection.blackNeutral06,
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  );
+                },
               ),
             ),
           ),
@@ -51,17 +63,22 @@ class ArticleDetail extends StatelessWidget {
               scrolledUnderElevation: 0,
               leading: Padding(
                 padding: const EdgeInsets.all(10.0),
-                child: CircleAvatar(
-                  backgroundColor: Colors.white,
-                  child: IconButton(
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                    tooltip: "Back",
-                    icon: const Icon(
-                      Icons.arrow_back_ios_rounded,
-                      color: ColorsCollection.blackNeutral,
-                      size: 20,
+                child: PhysicalModel(
+                  color: Colors.black.withOpacity(0.1),
+                  elevation: 4.0,
+                  shape: BoxShape.circle,
+                  child: CircleAvatar(
+                    backgroundColor: Colors.white,
+                    child: IconButton(
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      tooltip: "Back",
+                      icon: const Icon(
+                        Icons.arrow_back_ios_rounded,
+                        color: ColorsCollection.blackNeutral,
+                        size: 20,
+                      ),
                     ),
                   ),
                 ),
@@ -70,28 +87,38 @@ class ArticleDetail extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.only(
                       right: 10.0, bottom: 10.0, top: 10.0),
-                  child: CircleAvatar(
-                    backgroundColor: Colors.white,
-                    child: IconButton(
-                      onPressed: () {},
-                      tooltip: "Summary",
-                      icon: const Icon(FontAwesomeIcons.list,
-                          color: ColorsCollection.blackNeutral, size: 15),
+                  child: PhysicalModel(
+                    color: Colors.black.withOpacity(0.1),
+                    elevation: 4.0,
+                    shape: BoxShape.circle,
+                    child: CircleAvatar(
+                      backgroundColor: Colors.white,
+                      child: IconButton(
+                        onPressed: () {},
+                        tooltip: "Summary",
+                        icon: const Icon(FontAwesomeIcons.list,
+                            color: ColorsCollection.blackNeutral, size: 15),
+                      ),
                     ),
                   ),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(
                       right: 10.0, bottom: 10.0, top: 10.0),
-                  child: CircleAvatar(
-                    backgroundColor: Colors.white,
-                    child: IconButton(
-                      onPressed: () {},
-                      tooltip: "Share",
-                      icon: const Icon(
-                        FontAwesomeIcons.share,
-                        color: ColorsCollection.blackNeutral,
-                        size: 15,
+                  child: PhysicalModel(
+                    color: Colors.black.withOpacity(0.1),
+                    elevation: 4.0,
+                    shape: BoxShape.circle,
+                    child: CircleAvatar(
+                      backgroundColor: Colors.white,
+                      child: IconButton(
+                        onPressed: () {},
+                        tooltip: "Share",
+                        icon: const Icon(
+                          FontAwesomeIcons.share,
+                          color: ColorsCollection.blackNeutral,
+                          size: 15,
+                        ),
                       ),
                     ),
                   ),

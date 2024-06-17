@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:weatherapp_v2/model/models_disaster_article.dart';
+import 'package:weatherapp_v2/env/env.dart';
 
 class DisasterArticleViewmodel with ChangeNotifier {
   bool _isLoading = false;
@@ -14,7 +15,14 @@ class DisasterArticleViewmodel with ChangeNotifier {
     notifyListeners();
 
     try {
-      final response = await http.get(Uri.parse("https://api.worldnewsapi.com/search-news?api-key=API_KEY&text=disasters"));
+      final apiKey = Env.apiKey;
+      print("API Key: $apiKey");
+
+      final response = await http.get(Uri.parse(
+          "https://api.worldnewsapi.com/search-news?api-key=$apiKey&text=disasters"));
+
+      print("Response status: ${response.statusCode}");
+      print("Response body: ${response.body}");
 
       if (response.statusCode == 200) {
         _disasterArticleList = disasterArticleFromJson(response.body).news;

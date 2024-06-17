@@ -98,7 +98,7 @@ class _ArticlePageState extends State<ArticlePage> {
                       );
                     },
                     child: Container(
-                      height: 115,
+                      height: MediaQuery.of(context).size.height * 0.15,
                       width: double.infinity,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(14),
@@ -116,8 +116,9 @@ class _ArticlePageState extends State<ArticlePage> {
                           Stack(
                             children: [
                               SizedBox(
-                                width: 105,
-                                height: 115,
+                                width: MediaQuery.of(context).size.width * 0.26,
+                                height:
+                                    MediaQuery.of(context).size.height * 0.16,
                                 child: ClipRRect(
                                   borderRadius: const BorderRadius.only(
                                     topLeft: Radius.circular(14),
@@ -126,6 +127,18 @@ class _ArticlePageState extends State<ArticlePage> {
                                   child: Image.network(
                                     value.disasterArticleList[i].image,
                                     fit: BoxFit.cover,
+                                    errorBuilder: (context, error, stackTrace) {
+                                      return const Center(
+                                        child: Text(
+                                          'Not Found',
+                                          style: TextStyle(
+                                            color: Colors.white,
+                                            fontSize: 12,
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                        ),
+                                      );
+                                    },
                                   ),
                                 ),
                               ),
@@ -152,7 +165,8 @@ class _ArticlePageState extends State<ArticlePage> {
                                       width: 1,
                                     ),
                                     Text(
-                                      value.disasterArticleList[i].sourceCountry.toUpperCase(),
+                                      value.disasterArticleList[i].sourceCountry
+                                          .toUpperCase(),
                                       style: AppTextStyles.articlePortalStyle,
                                     ),
                                   ],
